@@ -1,0 +1,13 @@
+<form>
+    <legend *ngFor="let a of list ">
+        <div *ngIf="a.idFournisseur<20">
+       
+        <fieldset   [ngStyle]="{'background-color': a.libelle==='hp' ? 'green' : 'yellow'}" (dblclick)="supprimer(a)" >idFournisseur : {{a.idFournisseur}}<br>
+        <div   [ngStyle]="{'font-weight': getColor(a.code)}">Code : {{a.code}} </div><br>
+        <div  >  Libelle : {{a.libelle}}<br></div>
+   
+    </fieldset>
+</div>
+
+    </legend>
+</form>

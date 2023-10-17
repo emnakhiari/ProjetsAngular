@@ -1,0 +1,50 @@
+<input [(ngModel)]= 'find' />
+<form >
+   <legend *ngFor="let a of listProduits; let i=index ">
+    {{a.idProduit}} .<fieldset [ngStyle]="{'color': a.prixUnitaire<=50 ? 'blue' :'black' , 'font-weight':  a.prixUnitaire<=50 ?'italic':'normal' 
+  , 'font-size' : a.prixUnitaire<=50 ? '20px' :'normal' }">Produit : Produit {{a.idProduit}} <input type="submit" [disabled]=" a.tauxTVA == 0.02" (click)="change(i)" value="Ajuster TVA" /> <br>
+  
+        <ul >
+        <li>Identifiant : {{a.idProduit}}</li>
+        <li>Code : {{a.code}}</li>
+        <li>PrixUnitaire : {{a.prixUnitaire}}</li>
+        <li>TauxTVA : {{a.tauxTVA}}</li>
+        <p *ngIf="i==j" [ngStyle]=" {'color': 'green'}" > TVA Modifier<p>
+    </ul>
+    
+    </fieldset>
+    
+   </legend> 
+<h1>Resultat de Recherche</h1>
+   <div *ngFor="let a of listProduits; let i=index ">
+   <div *ngIf="a.code==find">
+      
+         <ul >
+            <li>Identifiant : {{a.idProduit}}</li>
+            <li>Code : {{a.code}}</li>
+            <li>PrixUnitaire : {{a.prixUnitaire}}</li>
+            <li>TauxTVA : {{a.tauxTVA}}</li>
+            <p *ngIf="i==j" [ngStyle]=" {'color': 'green'}" > TVA Modifier<p>
+        </ul>
+        
+      
+      </div>
+    
+    </div>
+
+    <h1>Ajouter un Produit</h1>
+    <form #p="ngForm">
+      <label>idProduit</label>
+      <input type="text" name="idProduit"  /><br>
+      <label>code</label>
+      <input type="text" name="code "  /><br>
+      <label>libelle</label>
+      <input type="text" name="libelle" /><br>
+      <label>prixUnitaire</label>
+      <input type="text"  name="prixUnitaire" /><br>
+      <label>tauxTVA</label>
+      <input type="text"  name="tauxTVA" /><br>
+      <input type="submit" class="btn btn-primary" value="ajouter" (click)="ajouter(p)" />
+  </form>
+
+</form>

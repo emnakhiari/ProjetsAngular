@@ -1,0 +1,12 @@
+
+<div *ngIf="hide==false">
+    <p>fournisseur works!</p>
+    <ul>
+    
+        <li>idFournisseur : {{idFournisseur}}</li>
+        <li>code : {{code}}</li>
+        <li>libelle : {{libelle}}</li>
+        <li>hide : {{hide}}</li>
+    </ul>
+    </div>
+    <input type="submit" value="Cacher" (click)="change()">

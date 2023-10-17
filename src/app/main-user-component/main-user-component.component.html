@@ -1,0 +1,16 @@
+
+
+<div class="row">
+ 
+    <div class="col-sm-6"  *ngFor="let a of ListUser">
+      <div class="card">
+        <div class="card-body">
+        <p class="card-text"><img src="{{a.image}}"/>.</p>
+          <h5 class="card-title">{{a.typeAccount}}</h5>
+          <p class="card-text">{{a.description}}</p>
+          <input value="Show All" class="btn btn-primary" type="button" (click)="change(a.typeAccount)"/>
+        </div>
+      </div>
+    </div>
+  </div>
+<router-outlet></router-outlet>
